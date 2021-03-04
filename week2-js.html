@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"></meta>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<title>第2週作業</title>
+	<style type="text/css">
+	</style>
+	<script type="text/javascript">
+
+		function calculate(min, max)
+		{
+			var sum = 0 ;
+
+			for( let x = min;x <=max;x++)
+			{
+				sum = sum+x;
+			}
+			alert(sum)
+			// 請用你的程式補完這個函式的區塊
+		}
+	calculate(1, 3); // 你的程式要能夠計算 1+2+3，最後印出 6
+	calculate(4, 8); // 你的程式要能夠計算 4+5+6+7+8，最後印出 30
+		//alert("scriot 測試")
+
+
+
+
+		function avg(data)
+		{
+			var sum = 0;
+			var run = 0;
+			var allrun = 0;
+			var obj = data["employees"];
+			for(var x =0;x<obj.length;x++)
+			{
+				sum = sum + obj[x]["salary"]
+				
+			}
+			allrun = sum / obj.length;
+			alert(allrun)
+			// 請用你的程式補完這個函式的區塊
+		}
+avg({
+"count":3,
+"employees":[
+{
+"name":"John",
+"salary":30000
+},
+{
+"name":"Bob",
+"salary":60000
+},
+{
+"name":"Jenny",
+"salary":50000
+}
+]
+}); // 呼叫 avg 函式
+
+
+	function maxProduct(nums)
+	{
+		var sum = 0;
+		var krsum = 0;
+		for(var k = 0;k<nums.length;k++)
+		{
+			for(var r =0;r<nums.length;r++)
+			{
+				if(k != r)
+				{
+					krsum = nums[k]*nums[r];
+					if(krsum<0)
+					{
+						if(sum == 0)
+						{
+							sum = krsum;
+						}
+					}
+					if(krsum > sum)
+					{
+						sum = krsum;
+					}
+				}
+			}
+
+		}
+
+		alert(sum)
+		// 請用你的程式補完這個函式的區塊
+	}
+maxProduct([5, 20, 2, 6]); // 得到 120 因為 20 和 6 相乘得到最大值
+maxProduct([10,-20, 0,3]); // 得到 30 因為 10 和 3 相乘得到最大值
+
+	function twoSum(nums, target)
+	{
+		var aid1 =0, aid2=0,surplus = 0;
+		var exit_flag = false;
+		for(var i = 0 ; i<nums.length;i++)
+		{
+			surplus = target-nums[i];
+			for(var j = 0 ; j<nums.length;j++)
+			{
+				if(i != j)
+				{
+					if(surplus == nums[j])
+					{
+						if((nums[i]+nums[j]) == target )
+						{
+							aid1 = i;
+							aid2 = j;
+							exit_flag = true;
+
+						}
+					}
+				}
+			}
+			if(exit_flag)
+			{
+				break
+			}
+		}
+		// your code here
+		alert([aid1,aid2])//顯示兩個變數(內加[,])
+	}
+result=twoSum([2, 11, 7, 15], 9)
+console.log(result) // show [0, 2] because nums[0]+nums[2] is 9
+
+
+
+	</script>
+</head>
+
+<body style="margin:0px;background-color:#eeeeee">
+
+
+	</div>
+
+
+</body>
+</html>
